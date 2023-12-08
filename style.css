@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -50,7 +51,7 @@ nav ul li:hover {
     padding: 10px;
     transition: .5s;
     transform: scale(1.10);
-    filter: drop-shadow(10px 10px 5px white);
+    filter: drop-shadow(10px 10px 20px white);
 }
 
 nav li a {
@@ -60,7 +61,7 @@ nav li a {
 }
 
 nav ul li a:hover {
-    color: cyan;
+    color: #54c7f9;
 }
 
 /* nav h2 a {
@@ -88,20 +89,22 @@ nav h2 a:hover {
 
 .button button {
     border-radius: 20px;
-    border: 1px solid cyan;
+    border: 1px solid white;
     padding: 7px;
     cursor: pointer;
     color: white;
-    background-color: rgb(3, 2, 63);
+    background-color: rgb(42, 116, 136);
 }
 
 .button button:hover {
-    color: blue;
+    color: #1680ac;
     font-weight: 400;
     background-color: cyan;
     transform: scale(1.10);
     transition: .3s;
     filter: drop-shadow(10px 10px 10px rgba(255, 255, 255, 0.31));
+    color: #fff;
+    background: rgba(115, 113, 113, 0.661);
 }
 
 
@@ -177,27 +180,16 @@ header img {
     color: #1680ac;
     font-size: 1.1em;
     font-weight: 500;
-    border-radius: 5px;
+    border-radius: 45px;
     transition: 0.3s ease;
 }
 
-/* .btn {
-    width: 180px;
-    height: 50px;
-    border: 3px solid white;
-    background: transparent;
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-} */
-
 .home .content a:hover {
     /* border:3px solid #fff; */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.007) 0px 5px 15px;
     color: #fff;
     font-weight: 700;
-    background: rgb(29, 29, 29);
+    background: rgba(115, 113, 113, 0.661);
 }
 
 .menu-btn {
@@ -313,6 +305,123 @@ header img {
     transition-property: clip-path;
 }
 
+
+
+.donate_card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.donate_card1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.headline h2 {
+    margin-left: 100px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex: none;
+}
+
+.card {
+    width: 300px;
+    margin: 20px;
+    /* border: 1px solid #ddd;   */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.449);
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-content {
+    padding: 15px;
+    background-color: #262628;
+}
+
+.card-content p {
+    text-align: center;
+}
+
+.hotel-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.location {
+    font-size: 16px;
+    color: #27ae60;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #5261c3;
+}
+
+.extra {
+    display: flex;
+    justify-content: center;
+}
+
+.AmenitiesSection_item__sB19R {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-700);
+    padding: 10px;
+    justify-content: center;
+}
+
+.card-content span {
+    color: #3437db;
+}
+
+.extra {
+    padding: 2px;
+}
+
+.extra #avg {
+    color: #27ae60;
+
+}
+
 /* -------------------------------------------------------- why donate? ---------------------------------------------------------------------------- */
 
 .main {
@@ -323,15 +432,148 @@ header img {
 }
 
 .main_img img {
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
     border-radius: 40px;
-    margin: 20px;
+    margin: 90px 50px 20px 20px;
+}
+
+.main_content h1 {
+    color: #1680ac
 }
 
 .main_content {
     display: flex;
     flex-direction: column;
     margin: 20px;
-    font-size: 1.10rem;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------- footer ---------------------------------------------------------- */
+.footer {
+    padding-bottom: 0px;
+    z-index: 1;
+    bottom: 0;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.footer-container {
+    max-width: 100%;
+    background-color: rgb(57, 57, 57);
+    /* margin: auto; */
+    padding-top: 15px;
+    /* position: absolute; */
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffff;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    font-weight: 1000;
+    position: relative;
+
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #3498db;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffff;
+
+}
+
+ul {
+    list-style: none;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+
+}
+
+.footer-col .social-links {
+    color: #ffffff;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.footer-col .social-links p {
+    color: #ffffff;
+}
+
+#home footer div.col-md-12>p a {
+    text-decoration: none;
+}
+
+#home footer ul {
+    padding-left: 0px;
 }
