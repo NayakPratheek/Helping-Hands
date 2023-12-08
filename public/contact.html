@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Helping Hands | Contact</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("WyBjUeQ-vwvMVNQ1X");
+        })();
+    </script>
+    <script src="/public/index.js"></script>
+</head>
+
+<body>
+
+    <div class='connect_me'>
+        <h1>Contact Us</h1>
+        <h3>Ask any queries here</h3>
+        <div class='connect'>
+            <div class='connect_content'>
+                <div class='cont'>&#x1F4DE; +91-93213-12842</div>
+                <div class='cont'>&#128231;&nbsp;helping.hands@gmail.com</div>
+                <div class='cont'>&#128204;&nbsp;Mangalore, Karnataka, India</div>
+            </div>
+            <div class='connect_message'>
+                <form id="emailForm">
+                    <div class='leave'>
+                        <h3>Ping us here 📌</h3>
+                    </div>
+                    <div class='cont'>
+                        <div class='name'>
+                            <input type='text' placeholder='Enter your name' name='user-name' id='user-name' required>
+                        </div>
+                        <div class='email'>
+                            <input type='email' placeholder='Enter your mail' name='user-mail' id='user-mail' required>
+                        </div>
+                        <div class='phone'>
+                            <input type='tel' placeholder='Enter your phone number' name='user-phone' id='user-phone'
+                                required>
+                        </div>
+                        <div class='message'>
+                            <textarea placeholder="Drop your message here!" id="user-message" cols="0" rows="7"
+                                name='user-message'></textarea>
+                        </div>
+                        <div class='button' id='submitButton'>
+                            <input type="submit" value="Send Message📩" onclick="sendMail()">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -396,10 +396,12 @@ header img {
 .card2 {
     width: 300px;
     margin: 20px;
+    height: 600px;
     /* border: 1px solid #ddd;   */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 10px 10px 10px rgba(101, 100, 100, 0.449);
+    background-color: #2f2f30;
 }
 
 .card2:hover {
@@ -420,6 +422,10 @@ header img {
     border-radius: 8px;
     transform: scale(1.05);
     transition: .2s;
+}
+
+#pen {
+    color: #1680ac;
 }
 
 .card-content2 {
@@ -547,8 +553,6 @@ header img {
 
 
 
-
-
 /* ---------------------------------------------------------------- footer ---------------------------------------------------------- */
 .footer {
     padding-bottom: 0px;
@@ -556,6 +560,7 @@ header img {
     bottom: 0;
     justify-content: space-evenly;
     display: flex;
+    margin-top: 100px;
 }
 
 .footer-container {
@@ -658,4 +663,131 @@ ul {
 
 #home footer ul {
     padding-left: 0px;
+}
+
+
+
+
+
+/* ------------------------------------------------------------ contact ------------------------------------------------------ */
+.connect_me h1,
+h3 {
+    text-align: center;
+    color: #1680ac;
+}
+
+
+.connect_me h3 {
+    margin: 30px;
+}
+
+.connect {
+    width: 80%;
+    height: 60vh;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.connect_content {
+    width: 340px;
+    height: 300px;
+    border-radius: 20px;
+    filter: drop-shadow(3px 3px 10px rgba(255, 255, 255, 0.41));
+}
+
+.connect_content .cont {
+    margin: 20px;
+    padding: 2px;
+}
+
+.connect_message {
+    width: 400px;
+    height: 650px;
+    border-radius: 20px;
+    box-shadow: (9px 7px 10px rgba(255, 255, 255, 0.341));
+    margin: 0px 50px;
+}
+
+.leave h3 {
+    color: white;
+    display: flex;
+}
+
+/* @media (max-width:1200px) and (min-width:801px) {
+    .connect_me {
+        margin-top: 1100px;
+    }
+} */
+
+@media (max-width:800px) and (min-width:320px) {
+    .connect_me {
+        margin-top: 700px;
+    }
+}
+
+.leave h3 {
+    text-align: center;
+}
+
+.name input {
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0.256);
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 10px 30px 10px 30px;
+    color: white;
+}
+
+
+.email input {
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0.256);
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 10px 30px 10px 30px;
+    color: white;
+}
+
+.phone input {
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0.256);
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 10px 30px 10px 30px;
+    color: white;
+}
+
+.message textarea {
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0.256);
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 10px 30px 10px 30px;
+    color: white;
+}
+
+.button {
+    margin: 15px 0px 0px 20px;
+    display: flex;
+}
+
+.button input {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+}
+
+.button input:hover {
+    background-color: rgba(255, 255, 255, 0.522);
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: .3s;
 }
