@@ -1,18 +1,28 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-require('dotenv').config();
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-});
+})
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error);
+    });
 
-// Define a mongoose schema for your data
 const volunteerSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -20,39 +30,40 @@ const volunteerSchema = new mongoose.Schema({
     address: String,
 });
 
-// Create a mongoose model based on the schema
 const Volunteer = mongoose.model('Volunteer', volunteerSchema);
 
-// Middleware to parse JSON in request body
-app.use(bodyParser.json());
+app.use(express.static('public', { extensions: ['html', 'css'] }));
 
-// Serve HTML and static files
-app.use(express.static('public'));
-
-// Handle GET requests for the root path
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/signup.html');
 });
 
-// Handle form submission
+// Update the '/submit-form' route to send a JSON response instead of redirecting
 app.post('/submit-form', async (req, res) => {
+    console.log('Received form submission');
+    console.log('Request body:', req.body);
+
+    const { name, email, phone, address } = req.body;
+    console.log('Form data:', { name, email, phone, address });
+
+    const newVolunteer = new Volunteer({
+        name,
+        email,
+        phone,
+        address,
+    });
+
     try {
-        // Create a new volunteer instance based on the request body
-        const newVolunteer = new Volunteer(req.body);
-
-        // Save the new volunteer to the database
         await newVolunteer.save();
-
-        // Send a success response
-        res.status(200).send('Form submitted successfully!');
+        console.log('Form submitted successfully!');
+        res.json({ success: true, message: 'Form submitted successfully!' });
     } catch (error) {
-        // Handle errors
-        console.error(error);
-        res.status(500).send('Internal Server Error');
+        console.error('Error saving to database:', error);
+        res.status(500).json({ success: false, message: 'Internal Server Error' });
     }
 });
 
-// Start the server
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

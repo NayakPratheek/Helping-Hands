@@ -298,7 +298,7 @@ header img {
     clip-path: circle(0% at 0 50%);
 }
 
-.t-slide{
+.t-slide {
     position: absolute;
     width: 100%;
     clip-path: circle(0% at 0 50%);
@@ -322,7 +322,8 @@ header img {
 .donate_card {
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
+    /* margin: auto; */
+    margin-top: 130px;
 }
 
 .donate_card1 {
@@ -349,7 +350,7 @@ header img {
     /* border: 1px solid #ddd;   */
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.449);
+    box-shadow: 10px 10px 10px rgba(101, 100, 100, 0.449);
 }
 
 .card:hover {
@@ -374,7 +375,70 @@ header img {
     text-align: center;
 }
 
-.hotel-name {
+/* -------------------------------------------------------------------------------------- */
+
+.donate_card2 {
+    margin-top: 100px;
+}
+
+.headline2 h2 {
+    margin-left: 100px;
+}
+
+.cards2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex: none;
+}
+
+.card2 {
+    width: 300px;
+    margin: 20px;
+    /* border: 1px solid #ddd;   */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgba(101, 100, 100, 0.449);
+}
+
+.card2:hover {
+    cursor: pointer;
+}
+
+.card2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card2 img:hover {
+    width: 100%;
+    /* height: 200px; */
+    object-fit: cover;
+    border-radius: 8px;
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+.card-content2 {
+    padding: 15px;
+    background-color: #2f2f30;
+}
+
+.card-content2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-content2 p {
+    text-align: center;
+}
+
+.content-name {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -457,12 +521,14 @@ header img {
 .main_content {
     margin: 20px;
     font-size: 1rem;
-    flex: 1; /* This allows the content to take up the remaining space */
+    flex: 1;
+    /* This allows the content to take up the remaining space */
 }
 
 .main_content h1 {
     color: #1680ac;
-    text-align: center; /* Center the heading */
+    text-align: center;
+    /* Center the heading */
 }
 
 

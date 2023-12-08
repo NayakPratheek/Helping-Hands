@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./login.css" />
+    <link rel="icon" href="/images/logo1.png" type="image/icon type">
+</head>
+
+<body>
+    <div class="home">
+        <a href="/">Home &#x2192;</a>
+    </div>
+    <div class="container">
+        <form class="signup-form" action="/submit-form" method="POST">
+            <h2>Be a Volunteer</h2>
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Name" required />
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder="Phone" required />
+            </div>
+            <div class="form-group">
+                <textarea id="address" name="address" rows="4" cols="50" placeholder="Address" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <!-- <script>
+        document
+            .querySelector(".signup-form")
+            .addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevents the form from being submitted
+
+                console.log('Form data:', {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    address: document.getElementById('address').value,
+                });
+            });
+    </script> -->
+    <script>
+        document.querySelector(".signup-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevents the form from being submitted
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+            };
+
+            console.log('Form data:', formData); // Log the collected data to the console for debugging
+
+            // Send a POST request to the server
+            fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                    } else {
+                        alert('Error submitting form. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An unexpected error occurred. Please try again later.');
+                });
+        });
+
+    </script>
+</body>
+
+</html>
