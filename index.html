@@ -54,7 +54,7 @@
             <video class="video-slide" src="video/cloth.mp4" autoplay muted loop></video>
             <video class="video-slide" src="video/education.mp4" autoplay muted loop></video>
             <div class="content active">
-                <h1>Donate for<br /><span>Hunger</span></h1>
+                <h1>Donate for<br /><span id="element"></span></h1>
                 <p>
                     Your donation for hunger relief can be a lifeline for those in need. Every contribution, no matter
                     the
@@ -66,7 +66,7 @@
                 <a href="#">Donate For Hunger</a>
             </div>
             <div class="content">
-                <h1>Donate<br /><span>Clothes</span></h1>
+                <h1>Donate<br /><span id="element1"></span></h1>
                 <p>
                     Donate your gently used clothes to make a big impact on the lives of the less fortunate. Your small
                     act
@@ -79,7 +79,7 @@
                 <a href="#">Donate</a>
             </div>
             <div class="content">
-                <h1>Donate <br><span>For Education</span></h1>
+                <h1>Donate <br><span id="element2"></span></h1>
                 <p>
                     Make a difference in the lives of the less privileged by donating to education. Your financial
                     support
@@ -141,7 +141,7 @@
                             alt="">
                         <div class="hotel-name">Food</div>
                         <p>Donate your excessive <br>leftover food</p>
-                        <a href="#" class="btn">Donate</a>
+                        <a href="food.html" class="btn">Donate</a>
                     </div>
                 </div>
                 <div class="card">
@@ -151,7 +151,7 @@
                         <div class="hotel-name">Clothes</div>
                         <p>Provide your used , unwanted clothes </p>
 
-                        <a href="#" class="btn">Donate</a>
+                        <a href="clothes.html" class="btn">Donate</a>
                     </div>
                 </div>
                 <div class="card">
@@ -160,7 +160,7 @@
                             alt="">
                         <div class="hotel-name">Education</div>
                         <p>Shine someone's future</p>
-                        <a href="#" class="btn">Donate</a>
+                        <a href="education.html" class="btn">Donate</a>
                     </div>
                 </div>
                 <div class="card">
@@ -169,7 +169,7 @@
                             alt="">
                         <div class="hotel-name">Money</div>
                         <p>Help sustain someone's future</p>
-                        <a href="#" class="btn">Donate</a>
+                        <a href="money.html" class="btn">Donate</a>
                     </div>
                 </div>
             </div>
@@ -238,74 +238,101 @@
 
 
         <!-- ----------------------------------------------------- javascript ---------------------------------------------------------- -->
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <span id="element"></span>
 
+        <!-- Load library from the CDN -->
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <!-- Setup and start animation! -->
         <script>
-            var videoslide = document.querySelectorAll(".video-slide");
-            var btns = document.querySelectorAll(".nav-btn");
-            const test = document.querySelectorAll(".test");
-            const contents = document.querySelectorAll(".content");
-            let currentslide = 1;
-            var mannualNav = function (manual) {
+            var typed = new Typed('#element', {
+                strings: ['Hunger.'],
+                typeSpeed: 150,
+                backSpeed: 100,
+                loop: true,
+            });
+            var typed = new Typed('#element1', {
+                strings: [' for Clothes.'],
+                typeSpeed: 150,
+                backSpeed: 100,
+                loop: true,
+            });
+            var typed = new Typed('#element2', {
+                strings: [' for Education.'],
+                typeSpeed: 150,
+                backSpeed: 100,
+                loop: true,
+            });
+        </script>
+</body>
+<script>
+    var videoslide = document.querySelectorAll(".video-slide");
+    var btns = document.querySelectorAll(".nav-btn");
+    const test = document.querySelectorAll(".test");
+    const contents = document.querySelectorAll(".content");
+    let currentslide = 1;
+    var mannualNav = function (manual) {
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        videoslide.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        videoslide[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    };
+
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            mannualNav(i);
+            currentslide = i;
+        });
+    });
+
+    var repeat = function (activeClass) {
+        let active = document.getElementsByClassName(".active");
+        let i = 1;
+        var repeater = () => {
+            setTimeout(function () {
+                contents.forEach((content) => {
+                    content.classList.remove("active");
+                });
+                videoslide.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+                test.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
                 btns.forEach((btn) => {
                     btn.classList.remove("active");
                 });
 
-                videoslide.forEach((slide) => {
-                    slide.classList.remove("active");
-                });
+                videoslide[i].classList.add("active");
+                contents[i].classList.add("active");
+                btns[i].classList.add("active");
+                i++;
 
-                contents.forEach((content) => {
-                    content.classList.remove("active");
-                });
-
-                btns[manual].classList.add("active");
-                videoslide[manual].classList.add("active");
-                contents[manual].classList.add("active");
-            };
-
-            btns.forEach((btn, i) => {
-                btn.addEventListener("click", () => {
-                    mannualNav(i);
-                    currentslide = i;
-                });
-            });
-
-            var repeat = function (activeClass) {
-                let active = document.getElementsByClassName(".active");
-                let i = 1;
-                var repeater = () => {
-                    setTimeout(function () {
-                        contents.forEach((content) => {
-                            content.classList.remove("active");
-                        });
-                        videoslide.forEach((slide) => {
-                            slide.classList.remove("active");
-                        });
-                        test.forEach((btn) => {
-                            btn.classList.remove("active");
-                        });
-                        btns.forEach((btn) => {
-                            btn.classList.remove("active");
-                        });
-
-                        videoslide[i].classList.add("active");
-                        contents[i].classList.add("active");
-                        btns[i].classList.add("active");
-                        i++;
-
-                        if (videoslide.length == i) {
-                            i = 0;
-                        }
-                        if (i >= videoslide.length) {
-                            return;
-                        }
-                        repeater();
-                    }, 6000);
-                };
+                if (videoslide.length == i) {
+                    i = 0;
+                }
+                if (i >= videoslide.length) {
+                    return;
+                }
                 repeater();
-            };
-            repeat();
-        </script>
+            }, 6000);
+        };
+        repeater();
+    };
+    repeat();
+</script>
 </body>
 
 </html>

@@ -298,12 +298,24 @@ header img {
     clip-path: circle(0% at 0 50%);
 }
 
+.t-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
 .video-slide.active,
-.slide.active {
+.slide.active,
+.t-slide.active {
     clip-path: circle(150% at 0 50%);
     transition: 2s ease;
     transition-property: clip-path;
 }
+
+
+
+
+
 
 
 
@@ -431,6 +443,10 @@ header img {
     margin: 100px;
 }
 
+.main_img {
+    position: relative;
+}
+
 .main_img img {
     width: 500px;
     height: 500px;
@@ -438,15 +454,15 @@ header img {
     margin: 90px 50px 20px 20px;
 }
 
-.main_content h1 {
-    color: #1680ac
-}
-
 .main_content {
-    display: flex;
-    flex-direction: column;
     margin: 20px;
     font-size: 1rem;
+    flex: 1; /* This allows the content to take up the remaining space */
+}
+
+.main_content h1 {
+    color: #1680ac;
+    text-align: center; /* Center the heading */
 }
 
 
