@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helping Hands</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/logo1.png" type="image/icon type">
 </head>
 
 <body>
     <div class="navbar">
         <nav>
-            <h2><a href='index.html'><i>Helping Hands</i></a></h2>
+            <a href='index.html'><img src="/images/logo1.png" alt=""></a>
             <ul>
                 <li>
                     <a href="#" class="media">
@@ -42,6 +43,162 @@
             <div class="button">
                 <button>Donate now !</button>
             </div>
+        </nav>
+
+
+        <!-- ----------------------------------------------------- Home --------------------------------------------------------- -->
+
+        <section class="home" id="home">
+            <video class="video-slide active" src="video/poverty.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="video/cloth.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="video/education.mp4" autoplay muted loop></video>
+            <div class="content active">
+                <h1>Donate for<br /><span>Hunger</span></h1>
+                <p>
+                    Your donation for hunger relief can be a lifeline for those in need. Every contribution, no matter
+                    the
+                    size, helps put food on the tables of families facing hunger. Your generosity is a beacon of hope,
+                    making a direct impact on the lives of individuals striving for a better tomorrow. Join us in the
+                    fight
+                    against hunger, as together, we can make a meaningful difference one meal at a time..
+                </p>
+                <a href="#">Donate For Hunger</a>
+            </div>
+            <div class="content">
+                <h1>Donate<br /><span>Clothes</span></h1>
+                <p>
+                    Donate your gently used clothes to make a big impact on the lives of the less fortunate. Your small
+                    act
+                    of kindness can bring warmth and dignity to those in need. By sharing what you have, you contribute
+                    to a
+                    more compassionate and caring community. Give the gift of clothing and help make a positive
+                    difference
+                    in someone's life.
+                </p>
+                <a href="#">Donate</a>
+            </div>
+            <div class="content">
+                <h1>Donate <br><span>For Education</span></h1>
+                <p>
+                    Make a difference in the lives of the less privileged by donating to education. Your financial
+                    support
+                    provides opportunities for a brighter future, ensuring that every child, regardless of economic
+                    circumstances, has access to the transformative power of learning.
+                </p>
+                <a href="#">Education Fund</a>
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+
+
+
+        <!-- ----------------------------------------------------- Why Donate? --------------------------------------------------------- -->
+
+        <div class="main">
+            <div class="main_img">
+                <img src="https://www.gofundme.com/c/wp-content/uploads/2018/10/fooddrive.jpg?w=1920" alt="">
+            </div>
+            <div class="main_content">
+                <h2>Why to Donate?</h2><br>
+                <p>In a country as diverse and vibrant as India, the imperative to donate takes on a unique
+                    significance. In a land where the tapestry of life is woven with myriad challenges, from economic
+                    disparities to health crises, the need for support is palpable. Donations become a powerful
+                    instrument to address these challenges head-on, offering a lifeline to communities and individuals
+                    facing adversity. Whether it's providing essential resources, supporting healthcare initiatives, or
+                    ensuring access to education, your contribution in India can be a catalyst for positive change.
+                    <br><br>
+
+                    Your donation is not merely a transaction; it's a manifestation of solidarity in a nation that
+                    thrives on unity in diversity. India's rich tapestry is woven with threads of resilience, and your
+                    support adds strength to this fabric. By giving, you become an integral part of the collective
+                    effort to uplift those in need, creating a ripple effect that resonates across the vast landscapes
+                    and diverse cultures of this incredible nation. In India, where every act of kindness counts, your
+                    donation becomes a beacon of hope, illuminating paths to a better, more inclusive future.
+                    <br><br>
+                    Your support becomes a bridge that spans gaps between despair and hope, scarcity and abundance, and
+                    adversity and resilience. As you donate to causes that matter in India, you contribute not only to
+                    immediate relief but also to the sustainable development and progress of a nation that thrives on
+                    the collective spirit of its people. Together, through the simple yet profound act of giving, we can
+                    actively shape a brighter and more compassionate future for India.
+                    <br><br>
+                </p>
+            </div>
+        </div>
+
+
+        <!-- ----------------------------------------------------- script ---------------------------------------------------------- -->
+
+        <script>
+            var videoslide = document.querySelectorAll(".video-slide");
+            var btns = document.querySelectorAll(".nav-btn");
+            const test = document.querySelectorAll(".test");
+            const contents = document.querySelectorAll(".content");
+            let currentslide = 1;
+            var mannualNav = function (manual) {
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                videoslide.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+
+                contents.forEach((content) => {
+                    content.classList.remove("active");
+                });
+
+                btns[manual].classList.add("active");
+                videoslide[manual].classList.add("active");
+                contents[manual].classList.add("active");
+            };
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    mannualNav(i);
+                    currentslide = i;
+                });
+            });
+
+            var repeat = function (activeClass) {
+                let active = document.getElementsByClassName(".active");
+                let i = 1;
+                var repeater = () => {
+                    setTimeout(function () {
+                        contents.forEach((content) => {
+                            content.classList.remove("active");
+                        });
+                        videoslide.forEach((slide) => {
+                            slide.classList.remove("active");
+                        });
+                        test.forEach((btn) => {
+                            btn.classList.remove("active");
+                        });
+                        btns.forEach((btn) => {
+                            btn.classList.remove("active");
+                        });
+
+                        videoslide[i].classList.add("active");
+                        contents[i].classList.add("active");
+                        btns[i].classList.add("active");
+                        i++;
+
+                        if (videoslide.length == i) {
+                            i = 0;
+                        }
+                        if (i >= videoslide.length) {
+                            return;
+                        }
+                        repeater();
+                    }, 6000);
+                };
+                repeater();
+            };
+            repeat();
+        </script>
 </body>
 
 </html>
