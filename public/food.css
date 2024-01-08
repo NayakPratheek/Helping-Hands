@@ -30,7 +30,7 @@
     height: 100vh;
     object-fit: cover;
     position: fixed;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 .contact .content {
