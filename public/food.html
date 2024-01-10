@@ -49,13 +49,13 @@
 
             <div class="contactform">
                 <h2>Provide us</h2>
-                <form action="index.php" method="post">
+                <form id="food-form">
                     <input type="text" name="name" id="name" placeholder="Please enter your name" />
                     <input type="email" name="email" id="email" placeholder="Please enter your E-mail" />
                     <input type="tel" name="phone" id="phone" placeholder="Enter your Phone number" />
-                    <textarea name="serve" id="desc" cols="10" rows="10" placeholder="How many servings?"></textarea>
-                    <textarea name="address" id="desc" cols="30" rows="10" placeholder="Pickup address"></textarea>
-                    <textarea name="cook" id="desc" cols="12" rows="10"
+                    <textarea name="serve" id="serve" cols="10" rows="10" placeholder="How many servings?"></textarea>
+                    <textarea name="address" id="address" cols="30" rows="10" placeholder="Pickup address"></textarea>
+                    <textarea name="cook" id="cook" cols="12" rows="10"
                         placeholder="When was the food cooked?"></textarea>
                     <div class="button">
                         <button class="btn">
@@ -67,6 +67,46 @@
         </div>
     </section>
     </div>
+    <script>
+        document.getElementById("food-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevents the form from being submitted
+            console.log("hii")
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                serve: document.getElementById('serve').value,
+                address: document.getElementById('address').value,
+                cook: document.getElementById('cook').value,
+            };
+
+            console.log('Form data:', formData); // Log the collected data to the console for debugging
+
+            // Send a POST request to the server
+            fetch('http://localhost:3000/food-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => response.json()
+                    .then(data => {
+                        if (data.success) {
+                            localStorage.setItem("userToken", data.token);
+                            alert(data.message);
+                        } else {
+                            alert('Error submitting form. Please try again.');
+                        }
+                    }))
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An unexpected error occurred. Please try again later.');
+                });
+        });
+
+    </script>
 </body>
 
 </html>

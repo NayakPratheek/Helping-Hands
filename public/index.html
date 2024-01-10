@@ -44,11 +44,18 @@
             <div class="button">
                 <a href="#donate_card"><button>Donate now !</button></a>
             </div>
+            <div id="google_translate_element"></div>
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript"
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         </nav>
 
 
         <!-- ----------------------------------------------------- Home --------------------------------------------------------- -->
-
         <section class="home" id="home">
             <video class="video-slide active" src="video/poverty.mp4" autoplay muted loop></video>
             <video class="video-slide" src="video/cloth.mp4" autoplay muted loop></video>
@@ -94,8 +101,6 @@
                 <div class="nav-btn"></div>
             </div>
         </section>
-
-
 
         <!-- ----------------------------------------------------- Why Donate? --------------------------------------------------------- -->
 
@@ -230,6 +235,17 @@
             </div>
         </div>
 
+        <!-- ----------------------------------------------------- Maps ----------------------------------------------------- -->
+        <div class="main-map">
+            <div class="headline">
+                <h2>Find your nearest NGO</h2>
+            </div>
+            <div class="maps">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.1536394367104!2d74.9822792084011!3d12.897840513094163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4a7cd919be7b7%3A0x5ce82f7b59212e3c!2sThe%20Akshaya%20Patra%20Foundation%20Mangalore!5e0!3m2!1sen!2sin!4v1704904774176!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
 
 
@@ -239,89 +255,90 @@
 
 
 
-        <!-- ----------------------------------------------------- footer ----------------------------------------------------- -->
+            <!-- ----------------------------------------------------- footer ----------------------------------------------------- -->
 
 
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-row">
-                    <div class="footer-col">
-                        <h4>About us</h4>
-                        <p>Change begins with us. Be that change encourages and promotes, sharing and spreading
-                            happiness. We the team of be that change scouts for donation. The donation is collected and
-                            distributed to people in need.
-                        </p>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Volunteer</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Contact info</h4>
-                        <div class='connect_content'>
-                            <div class='cont'>&#x1F4DE; +91-93213-12842</div>
-                            <div class='cont'>&#128231;&nbsp;helping.hands@gmail.com</div>
-                            <div class='cont'>&#128204;&nbsp;Mangalore, Karnataka, India</div>
-                        </div>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Follow us</h4>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <p>
-                                Canara Engineering College
-                                <br>
-                                Benjanapadavu, Mangalore, Karnataka
-                                <br>
-                                +91-124-4987 400
-                                <br>
-                                www.helpinghands.com
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-row">
+                        <div class="footer-col">
+                            <h4>About us</h4>
+                            <p>Change begins with us. Be that change encourages and promotes, sharing and spreading
+                                happiness. We the team of be that change scouts for donation. The donation is collected
+                                and
+                                distributed to people in need.
                             </p>
+                        </div>
+
+                        <div class="footer-col">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Volunteer</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Contact info</h4>
+                            <div class='connect_content'>
+                                <div class='cont'>&#x1F4DE; +91-93213-12842</div>
+                                <div class='cont'>&#128231;&nbsp;helping.hands@gmail.com</div>
+                                <div class='cont'>&#128204;&nbsp;Mangalore, Karnataka, India</div>
+                            </div>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Follow us</h4>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <p>
+                                    Canara Engineering College
+                                    <br>
+                                    Benjanapadavu, Mangalore, Karnataka
+                                    <br>
+                                    +91-124-4987 400
+                                    <br>
+                                    www.helpinghands.com
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </footer>
+            </footer>
 
 
-        <!-- ----------------------------------------------------- javascript ---------------------------------------------------------- -->
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-        <span id="element"></span>
+            <!-- ----------------------------------------------------- javascript ---------------------------------------------------------- -->
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <span id="element"></span>
 
-        <!-- Load library from the CDN -->
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <!-- Load library from the CDN -->
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-        <!-- Setup and start animation! -->
-        <script>
-            var typed = new Typed('#element', {
-                strings: [' for Hunger.'],
-                typeSpeed: 150,
-                backSpeed: 100,
-                loop: true,
-            });
-            var typed = new Typed('#element1', {
-                strings: [' for Clothes.'],
-                typeSpeed: 150,
-                backSpeed: 100,
-                loop: true,
-            });
-            var typed = new Typed('#element2', {
-                strings: [' for Education.'],
-                typeSpeed: 150,
-                backSpeed: 100,
-                loop: true,
-            });
-        </script>
+            <!-- Setup and start animation! -->
+            <script>
+                var typed = new Typed('#element', {
+                    strings: [' for Hunger.'],
+                    typeSpeed: 150,
+                    backSpeed: 100,
+                    loop: true,
+                });
+                var typed = new Typed('#element1', {
+                    strings: [' for Clothes.'],
+                    typeSpeed: 150,
+                    backSpeed: 100,
+                    loop: true,
+                });
+                var typed = new Typed('#element2', {
+                    strings: [' for Education.'],
+                    typeSpeed: 150,
+                    backSpeed: 100,
+                    loop: true,
+                });
+            </script>
 </body>
 <script>
     var videoslide = document.querySelectorAll(".video-slide");

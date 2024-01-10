@@ -107,6 +107,26 @@ nav h2 a:hover {
     background: rgba(115, 113, 113, 0.661);
 }
 
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+}
+
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    display: none;
+}
+
+.goog-te-gadget .goog-te-combo {
+    margin: 4px 0;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    padding: 3px;
+}
+
 
 
 /* -------------------------------------------------------- Home ---------------------------------------------------------------------------- */
@@ -539,12 +559,17 @@ header img {
 
 
 
+/* -------------------------------------------------- Maps ------------------------------------------------ */
+.main-map {
+    margin-top: 30px;
+}
 
 
 
-
-
-
+.maps {
+    display: flex;
+    justify-content: center;
+}
 
 
 
