@@ -11,7 +11,7 @@ dotenv.config();
 const JWT_USER_SECRETE = process.env.JWT_USER_SECRETE;
 
 const app = express();
-const MONGODB_URL = process.env.MONGODB_URL || 'mongodb+srv://pratheeknayak2153:b3k0IM3pmEMmQwH7@cluster0.ohdbo2i.mongodb.net/HelpingHands/?retryWrites=true&w=majority';
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb+srv://pratheeknayak2153:b3k0IM3pmEMmQwH7@cluster0.ohdbo2i.mongodb.net/HelpingHands/Helping_Hands_Database?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 3000;
 // console.log(MONGODB_URL)
 app.use(express.json());
