@@ -29,7 +29,7 @@ mongoose.connect(MONGODB_URL)
 const volunteerSchema = new mongoose.Schema({
     name: String,
     email: String,
-    password: String,
+    // password: String,
     phone: String,
     address: String,
 });
@@ -46,9 +46,9 @@ app.post('/submit-form', async (req, res) => {
     console.log('Received form submission');
     console.log('Request body:', req.body);
 
-    const { name, email, password, phone, address } = req.body;
+    const { name, email, phone, address } = req.body;
 
-    if (!name || !email || !password || !phone || !address) {
+    if (!name || !email || !phone || !address) {
         return res.status(400).json({ success: false, message: 'All fields are required' });
     }
 
@@ -57,7 +57,6 @@ app.post('/submit-form', async (req, res) => {
     const newVolunteer = new Volunteer({
         name,
         email,
-        password,
         phone,
         address,
     });
