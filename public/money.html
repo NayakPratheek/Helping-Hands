@@ -10,6 +10,27 @@
         integrity="sha384-ez3nAXdjlzImGB3vaEO3bTiw8fMmk9KnR7r/Mn6ydd7pdFS3PjD54p5+fxXu7RvL" crossorigin="anonymous">
     <link rel="icon" href="/images/logo1.png" type="image/icon type">
     <script src="https://kit.fontawesome.com/1373b730aa.js" crossorigin="anonymous"></script>
+    <style>
+        #money-form img {
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+
+        #money-form .upi {
+            font-size: 20px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        #money-form .upi label {
+            margin-left: 120px;
+        }
+
+        #money-form {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,7 +76,13 @@
                     <input type="tel" name="phone" id="phone" placeholder="Enter your Phone number" />
                     <textarea name="amt" id="amt" cols="10" rows="10" placeholder="Amount in words?"></textarea>
                     <textarea name="address" id="address" cols="30" rows="10" placeholder="Pickup address"></textarea>
-                    <textarea name="msg" id="msg" cols="12" rows="10" placeholder="Any message?"></textarea>
+                    <textarea name="msg" id="msg" cols="12" rows="10" placeholder="Any message?" height="200px"
+                        width="450px"></textarea>
+                    <div class="upi">
+                        <label for="upi">Or Scan here for the payment</label><img src="/public/images/upi.jpeg" alt=""
+                            width="300" height="300" margin-left="20px">
+                    </div>
+
                     <div class="button">
                         <button class="btn">
                             Submit

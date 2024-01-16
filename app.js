@@ -126,7 +126,7 @@ app.post('/submit-form', async (req, res) => {
 });
 
 
-app.post("/login", async (req, res) => {
+app.post("/login-form", async (req, res) => {
     // res.sendFile(path.join(__dirname, 'login.html'));
     console.log('Received form submission');
     console.log('Request body:', req.body);
